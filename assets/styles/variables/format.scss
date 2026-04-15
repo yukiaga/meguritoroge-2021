@@ -1,0 +1,11 @@
+/** フォーマット変数 */
+
+// space-size
+$space-unit: 4px;
+
+// z-index
+$z-index-base: 100;
+$z-index-contents: $z-index-base + 1;
+$z-index-menu: $z-index-base + 2;
+$z-index-hamburger: $z-index-base + 3;
+$z-index-clip-board: $z-index-base + 4;

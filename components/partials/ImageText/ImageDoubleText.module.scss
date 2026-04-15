@@ -1,0 +1,74 @@
+@import '@/assets/styles/resources.scss';
+
+.component-image-double-text {
+  display: flex;
+  gap: $default-gap;
+  justify-content: space-between;
+  width: 100%;
+
+  @include sp {
+    flex-direction: column;
+    gap: $default-gap-sp;
+  }
+
+  > .image {
+    position: relative;
+    display: flex;
+    flex: 0 0 calc(740 / 1220 * 100%);
+    flex-direction: column;
+    gap: calc($default-gap / 2);
+
+    @include sp {
+      flex: 0 0 100%;
+      gap: calc($default-gap-sp / 1);
+    }
+  }
+
+  > .content {
+    flex: 1 1 0;
+  }
+}
+
+.image-content {
+  position: relative;
+  width: 100%;
+  padding-top: calc(450 / 740 * 100%);
+
+  @include sp {
+    padding-top: calc(450 / 333 * 100%);
+  }
+
+  > img {
+    border-radius: 12px;
+
+    @include sp {
+      border-radius: 8px;
+    }
+  }
+}
+
+.content-title {
+  margin-bottom: calc(#{$default-gap} / 2);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+
+  @include sp {
+    margin-bottom: calc(#{$default-gap-sp} / 2);
+    font-size: 12px;
+    line-height: 25.5px;
+    letter-spacing: 0.36px;
+  }
+}
+
+.content-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 26px;
+
+  @include sp {
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.36px;
+  }
+}

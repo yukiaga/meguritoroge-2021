@@ -1,0 +1,88 @@
+@import '@/assets/styles/resources.scss';
+
+.component-footer {
+  width: 100%;
+  padding: 104px 127px 80px 80px;
+  color: #fff;
+  background-color: $black-footer;
+
+  @include sp {
+    padding: $default-gap-sp;
+  }
+
+  > .contents {
+    display: flex;
+    margin-bottom: 131px;
+
+    @include sp {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: $default-gap-sp;
+      margin-bottom: calc(#{$default-gap-sp} * 3);
+    }
+  }
+
+  > .copy {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+
+    @include sp {
+      width: calc(205px / $design-frame-width-sp * 100vw);
+      min-width: 210px;
+      margin: 0 auto $default-gap-sp;
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+}
+
+.content-logo {
+  width: calc(205px / $design-frame-width-pc * 100vw);
+  min-width: 202px;
+  padding-top: 20px;
+  margin-right: $default-gap;
+
+  @include hover-style;
+
+  @include sp {
+    display: flex;
+    align-items: center;
+    min-width: 210px;
+    margin: $default-gap-sp auto calc(#{$default-gap-sp} * 1.5);
+  }
+}
+
+.content-columns {
+  display: flex;
+  gap: $default-gap;
+  font-size: 14px;
+
+  @include sp {
+    flex-direction: column;
+    gap: $default-gap-sp;
+    align-items: flex-start;
+  }
+}
+
+.column-item {
+  margin-bottom: 31px;
+  line-height: 20px;
+  cursor: pointer;
+
+  @include hover-style;
+
+  @include sp {
+    margin-bottom: $default-gap-sp;
+  }
+
+  &.-no-link {
+    cursor: default;
+    transition: none;
+
+    &:hover {
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+  }
+}

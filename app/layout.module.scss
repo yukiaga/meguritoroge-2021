@@ -1,0 +1,47 @@
+@import '@/assets/styles/resources.scss';
+
+$menu-width: 60px;
+
+.content-layout {
+  position: relative;
+  overflow-x: scroll;
+
+  @include sp {
+    overflow-x: hidden;
+  }
+
+  > .menu {
+    position: fixed;
+    z-index: $z-index-menu;
+    width: $menu-width;
+    height: 100%;
+    overflow: hidden;
+
+    @include sp {
+      height: 60px;
+    }
+  }
+
+  > .content {
+    position: relative;
+    z-index: $z-index-contents;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 1200px;
+    margin-left: $menu-width;
+
+    @include sp {
+      min-width: 100%;
+    }
+
+    @include sp {
+      margin: 0;
+    }
+  }
+}
+
+.content-inner {
+  flex: 1;
+  overflow-y: auto;
+}

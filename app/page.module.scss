@@ -1,0 +1,44 @@
+@import '@/assets/styles/resources.scss';
+
+.top-page {
+  width: 100%;
+  font-size: 100px;
+}
+
+// hero画像なので画面いっぱいに広げる
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-content {
+  padding: $default-gap;
+
+  @include sp {
+    padding: $default-gap-sp;
+  }
+
+  > .item {
+    width: 100%;
+    margin-bottom: calc(#{$default-gap} * 2);
+
+    @include sp {
+      margin-bottom: calc(#{$default-gap-sp} * 2);
+    }
+
+    &.-table {
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  > .item:last-child {
+    margin-bottom: $default-gap;
+
+    @include sp {
+      margin-bottom: $default-gap-sp;
+    }
+  }
+}

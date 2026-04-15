@@ -1,0 +1,29 @@
+@import '@/assets/styles/resources.scss';
+
+.component-talk-guest {
+  width: 100%;
+
+  > .title {
+    max-width: calc(732 / 1220 * 100%);
+
+    @include basic-page-title;
+
+    @include sp {
+      max-width: 100%;
+    }
+  }
+
+  > .content {
+    width: 100%;
+  }
+}
+
+@include basic-page-style;
+
+.content-item {
+  margin-bottom: $default-gap;
+
+  @include sp {
+    margin-bottom: $default-gap-sp;
+  }
+}

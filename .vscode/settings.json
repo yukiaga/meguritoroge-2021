@@ -1,0 +1,65 @@
+{
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // リポジトリ内に変更が多い場合は警告する
+  "git.ignoreLimitWarning": true,
+
+  // eslintを適応させる
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // 保存時にautofixさせる & eslint, stylelintのautofixを有効にする
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  // prettierによる自動修正を有効にする
+  "editor.formatOnSave": true,
+
+  // stylelintの設定
+  "stylelint.enable": true,
+
+  // stylelintを実行するファイル
+  "stylelint.validate": ["css", "scss"],
+
+  // spell
+  "cSpell.words": [
+    "Aibi",
+    "busket",
+    "clipcopy",
+    "clsx",
+    "Daisuke",
+    "DOMMUNE",
+    "hiki",
+    "Horikawa",
+    "Kuniyuki",
+    "lintcss",
+    "lintjs",
+    "maxwidth",
+    "meguritoroge",
+    "minwidth",
+    "Noto",
+    "odori",
+    "rscss",
+    "shishi",
+    "stylelint",
+    "sublogo",
+    "svgr",
+    "Takahashi",
+    "Tanabe",
+    "tomikawaya",
+    "Tono",
+    "tsuzuki",
+    "webp",
+    "xlarge",
+    "xsmall",
+    "xxlarge",
+    "Yosi"
+  ]
+}

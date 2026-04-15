@@ -1,0 +1,34 @@
+@import '@/assets/styles/resources.scss';
+
+@mixin default-title-style() {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+
+  @include sp {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+
+.component-title {
+  @include default-title-style;
+}
+
+.component-link-title {
+  @include default-title-style;
+
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2.5px;
+    text-decoration-color: rgb(0 0 0 / 95%);
+    text-underline-offset: 4px;
+    opacity: 0.85;
+  }
+}

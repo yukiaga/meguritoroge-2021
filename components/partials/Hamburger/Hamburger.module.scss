@@ -1,0 +1,56 @@
+@import '@/assets/styles/resources.scss';
+
+.component-hamburger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  > .line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+    border-radius: 10px;
+    transition: transform 250ms $default-cubic-bezier,
+      width 250ms $default-cubic-bezier;
+    will-change: transform, top;
+
+    &.-top {
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    &.-bottom {
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    @include sp {
+      background: $white;
+    }
+  }
+
+  // open
+  &.-open {
+    > .line {
+      @include sp {
+        background: $black;
+      }
+    }
+
+    > .line.-top {
+      top: 50%;
+      transform: translate(-50%) rotate(-135deg);
+      transform-origin: top;
+    }
+
+    > .line.-bottom {
+      bottom: 50%;
+      transform: translate(-50%) rotate(135deg);
+      transform-origin: center;
+    }
+  }
+}

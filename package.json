@@ -1,0 +1,59 @@
+{
+  "name": "meguritoroge-2021",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lintjs:eslint": "eslint --ignore-path .gitignore .",
+    "lintjs:eslint:fix": "eslint --fix --ignore-path .gitignore .",
+    "lintjs:prettier": "prettier --check .",
+    "lintjs:prettier:fix": "prettier --write .",
+    "lintjs:all": "npm run lintjs:eslint && npm run lintjs:prettier",
+    "lintjs:all:fix": "npm run lintjs:eslint:fix && npm run lintjs:prettier:fix",
+    "lintcss": "stylelint --ignore-path .gitignore \"**/*.{css,scss,sass}\"",
+    "lintcss:fix": "stylelint --fix --ignore-path .gitignore \"**/*.{css,scss,sass}\""
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-copy-to-clipboard": "^5.0.4",
+    "@types/react-dom": "18.0.8",
+    "@types/react-scroll": "^1.8.6",
+    "@types/react-transition-group": "^4.4.5",
+    "next": "^14.2.3",
+    "react": "18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "18.2.0",
+    "react-intersection-observer": "^9.4.3",
+    "react-scroll": "^1.8.9",
+    "react-transition-group": "^4.4.5",
+    "reset-css": "^5.0.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "clsx": "^1.2.1",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.0",
+    "stylelint": "^14.14.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-rscss": "^0.4.0",
+    "typescript": "4.8.4"
+  },
+  "volta": {
+    "node": "20.14.0",
+    "npm": "10.7.0"
+  }
+}

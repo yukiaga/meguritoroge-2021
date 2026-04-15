@@ -1,0 +1,27 @@
+@import '@/assets/styles/resources.scss';
+
+.component-credit {
+  width: 100%;
+
+  > .title {
+    // max-width: calc(732 / 1220 * 100%);
+
+    @include basic-page-title;
+
+    @include sp {
+      max-width: 100%;
+    }
+  }
+
+  > .text {
+    // max-width: calc(732 / 1220 * 100%);
+
+    @include basic-page-text;
+
+    @include sp {
+      max-width: 100%;
+    }
+  }
+}
+
+@include basic-page-style;

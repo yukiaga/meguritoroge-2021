@@ -1,0 +1,21 @@
+@import '@/assets/styles/resources.scss';
+
+// transitionはjs側で指定する
+
+.component-fade-in {
+  opacity: 0;
+
+  &.-entered {
+    opacity: 1;
+  }
+}
+
+.component-fade-in-translate-y {
+  opacity: 0;
+  transform: translateY(10px);
+
+  &.-entered {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
