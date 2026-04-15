@@ -1,13 +1,14 @@
 /* stylelint-disable-next-line scss/at-import-no-partial-leading-underscore */
 @import 'reset-css';
-@import '@/assets/styles/resources.scss';
 
 html,
 body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #f7f7f5;
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  color: #0a0a0a;
+  background-color: #000;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
@@ -31,7 +32,5 @@ a {
 
 * {
   box-sizing: border-box;
-
-  // iosのタップハイライトを消す
   -webkit-tap-highlight-color: transparent;
 }

@@ -1,44 +1,323 @@
-@import '@/assets/styles/resources.scss';
+$max-content-width: 880px;
+$sp-bp: 767px;
 
-.top-page {
-  width: 100%;
-  font-size: 100px;
+@mixin sp {
+  @media (max-width: #{$sp-bp}) {
+    @content;
+  }
 }
 
-// hero画像なので画面いっぱいに広げる
-.hero-image {
+.page {
+  width: 100%;
+  color: #0a0a0a;
+}
+
+/* ---------- HERO ---------- */
+.hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.top-content {
-  padding: $default-gap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80px 8vw;
+  color: #fff;
+  background-color: #000;
 
   @include sp {
-    padding: $default-gap-sp;
+    min-height: 80vh;
+    padding: 80px 24px 60px;
+  }
+}
+
+.hero-sub {
+  margin-bottom: 2rem;
+  font-family: var(--font-josefin-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+
+  @include sp {
+    font-size: 13px;
+  }
+}
+
+.hero-title {
+  margin-bottom: 3rem;
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  font-size: clamp(48px, 9vw, 110px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.hero-tagline {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  top: 2rem;
+  right: 8vw;
+  left: 8vw;
+  display: flex;
+  gap: 2rem;
+  font-family: var(--font-josefin-sans), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+
+  @include sp {
+    right: 24px;
+    left: 24px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 11px;
   }
 
-  > .item {
+  a {
+    position: relative;
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ---------- CONTENT SECTIONS (white bg) ---------- */
+.content {
+  background-color: #fff;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  padding: 64px 24px 32px;
+
+  img {
+    width: 180px;
+    height: auto;
+  }
+}
+
+.section {
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.section-title {
+  margin: 80px 0 32px;
+  padding: 18px 0;
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-top: 1px solid #0a0a0a;
+  border-bottom: 1px solid #0a0a0a;
+
+  @include sp {
+    margin-top: 60px;
+    padding: 14px 0;
+    font-size: 15px;
+  }
+}
+
+.sub-title {
+  margin: 40px 0 16px;
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  text-align: justify;
+
+  @include sp {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+}
+
+.event-schedule {
+  margin: 32px 0;
+  font-size: 15px;
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  text-align: center;
+
+  @include sp {
+    font-size: 13px;
+    line-height: 2;
+    text-align: left;
+  }
+}
+
+.italic {
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- FULL-BLEED BANNER ---------- */
+.banner {
+  position: relative;
+  width: 100%;
+  margin: 48px 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  @include sp {
+    margin: 32px 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  img {
     width: 100%;
-    margin-bottom: calc(#{$default-gap} * 2);
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
-    @include sp {
-      margin-bottom: calc(#{$default-gap-sp} * 2);
-    }
+/* ---------- PICKUP (4 highlights) ---------- */
+.pickup-item {
+  margin: 48px 0;
+}
 
-    &.-table {
-      @include sp {
-        display: none;
-      }
+.pickup-image {
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ---------- ARTISTS / FACILITATORS ---------- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
+  margin: 32px 0;
+
+  @include sp {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile-img {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f3f3f0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.profile-name {
+  margin-bottom: 8px;
+  font-family: var(--font-noto-serif-jp), serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.profile-role {
+  margin-bottom: 12px;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.profile-bio {
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  margin-top: 120px;
+  padding: 80px 24px 48px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+}
+
+.footer-tagline {
+  margin-bottom: 24px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+
+  @include sp {
+    font-size: 12px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-family: var(--font-josefin-sans), sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+
+  a {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
     }
   }
+}
 
-  > .item:last-child {
-    margin-bottom: $default-gap;
+.footer-copy {
+  font-family: var(--font-josefin-sans), sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
 
-    @include sp {
-      margin-bottom: $default-gap-sp;
-    }
-  }
+/* ---------- ARCHIVE NOTICE ---------- */
+.archive-notice {
+  max-width: $max-content-width;
+  margin: 48px auto 0;
+  padding: 16px 24px;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+  border: 1px solid #ddd;
 }
