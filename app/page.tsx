@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { publicUrl } from '@/utils/publicUrl';
+
 import styles from './page.module.scss';
 
 type Person = {
@@ -13,25 +15,25 @@ const artists: Person[] = [
   {
     name: 'OLAibi',
     role: 'LIVE SESSION',
-    image: '/2021/artist-olaibi.jpg',
+    image: publicUrl('/2021/artist-olaibi.jpg'),
     bio: 'モンゴルをルーツに持ち、18歳でドイツに渡り電子音楽や現代音楽に触れる。その後、太鼓を中心としたマルチアーティストとして活動を始め、OOIOOのドラマーとして活動後、広大な森に移り住み、年月をかけ森の生物の生態と音を録り続けている。',
   },
   {
     name: 'KOM_I',
     role: 'LIVE SESSION',
-    image: '/2021/artist-komi.jpg',
+    image: publicUrl('/2021/artist-komi.jpg'),
     bio: '歌手・アーティスト。1992年生まれ、神奈川育ち。「水曜日のカンパネラ」のボーカルとして、国内だけでなく世界中のフェスに出演、ツアーを廻り、その土地や人々と呼応しながらライブパフォーマンスを創り上げている。趣味は世界各地に受け継がれる祭祀や儀礼を見学すること、唄や踊りを習うこと。',
   },
   {
     name: 'Kuniyuki Takahashi',
     role: 'LIVE SESSION',
-    image: '/2021/artist-kuniyuki.jpg',
+    image: publicUrl('/2021/artist-kuniyuki.jpg'),
     bio: '札幌を拠点に活動するKuniyuki Takahashi。彼の音楽は国境を問わず常に独特の世界観を持ち、世界各国のプロデューサー、DJから高い評価を得ている。DJ NatureやVakulaなどの海外アーティストとの共作を行い、国内ではサカナクションのリミックスなども手がける。',
   },
   {
     name: 'DAISUKE TANABE',
     role: 'LIVE SESSION',
-    image: '/2021/artist-daisuke.jpg',
+    image: publicUrl('/2021/artist-daisuke.jpg'),
     bio: '偶然の重なりから初ライヴはロンドンの廃墟で行われた大規模スクウォットパーティー。2006年、紆余曲折を経てリリースした初のEPがBBC Radio1 Worldwide Awardにノミネートされ、その後も世界最大規模の都市型フェスSónar Barcelonaへの出演、イタリアでのデザインの祭典ミラノサローネへの楽曲提供等幅広く活動中。釣り好き。',
   },
 ];
@@ -40,13 +42,13 @@ const talkGuests: Person[] = [
   {
     name: '赤坂 憲雄',
     role: '民俗学者 / 学習院大学教授',
-    image: '/2021/facil-akasaka.jpg',
+    image: publicUrl('/2021/facil-akasaka.jpg'),
     bio: '1953年、東京都生まれ。専門は民俗学・日本文化論。『岡本太郎の見た日本』（岩波書店）でドゥマゴ文学賞、芸術選奨文部科学大臣賞を受賞。『異人論序説』『排除の現象学』『東西／南北考』『武蔵野をよむ』『性食考』『ナウシカ考』など著書多数。',
   },
   {
     name: '大橋 進',
     role: '遠野郷八幡宮 神職',
-    image: '/2021/facil-ohashi.jpg',
+    image: publicUrl('/2021/facil-ohashi.jpg'),
     bio: '1980年生まれ。岩手県遠野市出身。岩手県遠野市鎮座「遠野郷八幡宮」で神職として働く。著書に『教訓で読み解く遠野物語』『社務ねこオトラ（上下巻）』を電子出版。',
   },
 ];
@@ -55,13 +57,13 @@ const facilitators: Person[] = [
   {
     name: '富川 岳',
     role: '株式会社 富川屋 / to know',
-    image: '/2021/facil-tomikawa.jpg',
+    image: publicUrl('/2021/facil-tomikawa.jpg'),
     bio: '1987年新潟県長岡市生まれ。ローカルプロデューサー。広告会社（spicebox / 博報堂常駐）を経て2016年に岩手県遠野市に移住。Next Commons Lab 立ち上げを経て独立。デザインや情報発信を生業としながら、岩手の豊かな地域文化に傾倒し、民俗学の視点からその土地の物語を編み直し、「いま」を生きる人々の糧とするべくツーリズムや商品開発、デザインを手掛ける。',
   },
   {
     name: '塚田 有那',
     role: '一般社団法人 Whole Universe / プロデューサー',
-    image: '/2021/facil-tsukada.jpg',
+    image: publicUrl('/2021/facil-tsukada.jpg'),
     bio: '一般社団法人Whole Universe代表理事。編集者、キュレーター。世界のアートサイエンスを伝えるメディア「Bound Baw」編集長。2010年、サイエンスと異分野をつなぐプロジェクト「SYNAPSE」を若手研究者と共に始動。近著に『ART SCIENCE is.』など。',
   },
 ];
@@ -95,7 +97,7 @@ export default function Page() {
         {/* Logo */}
         <div className={styles['logo-row']}>
           <Image
-            src="/2021/logo.png"
+            src={publicUrl('/2021/logo.png')}
             alt="遠野巡灯篭木"
             width={194}
             height={106}
@@ -130,7 +132,7 @@ export default function Page() {
 
         {/* Shrine banner */}
         <div className={styles.banner}>
-          <img src="/2021/hero-live-1.jpg" alt="菅原神社の例祭" />
+          <img src={publicUrl('/2021/hero-live-1.jpg')} alt="菅原神社の例祭" />
         </div>
 
         {/* Director's Message */}
@@ -181,7 +183,10 @@ export default function Page() {
               TANABEといったアーティストたちが、「しし踊り」に触発されたパフォーマンスを披露します。
             </p>
             <div className={styles['pickup-image']}>
-              <img src="/2021/pickup-sishi.jpg" alt="張山しし踊り" />
+              <img
+                src={publicUrl('/2021/pickup-sishi.jpg')}
+                alt="張山しし踊り"
+              />
             </div>
           </div>
 
@@ -194,7 +199,7 @@ export default function Page() {
               know」のローカルガイドによるスタディツアーを開催。物語が生まれた背景を、ガイドとの解説とともにより深く体感することができる、遠野を初めて訪れる参加者のためのコンテンツ。遠野に伝わる民話や風景の奥行きを、土地の案内人と歩みながら味わう時間となりました。
             </p>
             <div className={styles['pickup-image']}>
-              <img src="/2021/pickup-kappa.jpg" alt="カッパ淵" />
+              <img src={publicUrl('/2021/pickup-kappa.jpg')} alt="カッパ淵" />
             </div>
           </div>
 
@@ -208,7 +213,7 @@ export default function Page() {
             </p>
             <div className={styles['pickup-image']}>
               <img
-                src="/2021/pickup-food.jpg"
+                src={publicUrl('/2021/pickup-food.jpg')}
                 alt="どぶろくと遠野食材のディナー"
               />
             </div>
@@ -226,7 +231,10 @@ export default function Page() {
               ら5名のアーティストが参加しています。
             </p>
             <div className={styles['pickup-image']}>
-              <img src="/2021/pickup-anima.jpg" alt="Dialogue with Anima" />
+              <img
+                src={publicUrl('/2021/pickup-anima.jpg')}
+                alt="Dialogue with Anima"
+              />
             </div>
           </div>
         </div>
@@ -328,7 +336,7 @@ export default function Page() {
             style={{ aspectRatio: '1024 / 492' }}
           >
             <img
-              src="/2021/access-map.png"
+              src={publicUrl('/2021/access-map.png')}
               alt="遠野へのアクセス"
               style={{ objectFit: 'contain' }}
             />
