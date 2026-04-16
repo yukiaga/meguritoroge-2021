@@ -22,6 +22,10 @@ $sp-bp: 767px;
   padding: 80px 8vw;
   color: #fff;
   background-color: #000;
+  background-image: url('/2021/hero-olakomi.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 
   @include sp {
     min-height: 80vh;
